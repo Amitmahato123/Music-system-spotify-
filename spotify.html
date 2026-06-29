@@ -1,0 +1,1104 @@
+<html>
+<head><title>Spotify_Music</title>
+<link rel="stylesheet" href="spotify.css">
+</head>
+<script> 
+			
+	songs=[["raabata(arijit singh)","tu hain ton main hoon(arijit singh)","Tum Hi Ho","Dilliwaali Girlfriend","Wajah Tum Ho","Baatein Ye Kabhi Na","Baaton Ko Teri","Aaj Phir","","",""],
+			["Aankhon Se Tune Kya Keh Diya","Baadalon Mein Chup Raha ","Aaj Ki Raat Naya Geet","Aaj Pehli Baar Dil Ki Baat","Aankhon Mein Basaya Tha","Saaton Janam Tum","Sagar Sang Kinare Hai","Teri Chahat"],
+			["Aaj Kehna Zaroori hai","Ae Mere Humsafar","Bin Tere Sanam","Bholi Si Surat","Ajnabi Mujhko Itna Bata","Akeli Na Bazar Jaya Karo","Aankhein Khuli","Aaja Ve Mahi Fida","Aa Ab Laut Chalen",""],
+			["Brown Rang","Millionaire"]]
+	trend=["aaj ki raat"]
+	image=["arjit.jpeg","kumarsanu.jpeg","udit.jpeg","honey.jpeg","honey.jpeg","arrahman.jpg","badshah.jpg","alka.jpg","drake.jpg","darke.jpg","armaan.jpg","kk,jpg","diljit.jpg","diljit.jpg",""]
+	color=["#4ea798","#d8835b"]
+	verified=["verified.png"]
+	Artist=["Verified Artist"]
+	trending=["hindisongs.jpeg","punjabisongs.jpeg","bhojpuri.jpeg","southindian.jpeg","southindian.jpeg","odia.jpeg","bengoli.jpeg","90's.png","english.jpeg","southindian.jpeg729",""]
+	
+	namee=["Arjit singh","Kumar Sanu","Udit Narayan","yo yo honey singh","yo yo honey singh","Ar Rahman","Badshah","Alka Yagnik","Drake","Drake","Armaan","kk","Diljit Dissanth"]
+	au=new Audio()
+	function setpage()
+	{
+		document.getElementById("m1").style.display="none"
+		document.getElementById("m2").style.display="none"
+		document.getElementById("m3").style.display="block"
+		document.getElementById("m4").style.display="none"
+		document.getElementById("m5").style.display="none"
+		document.getElementById("s1").style.display="block"
+		document.getElementById("s2").style.display="none"
+		document.getElementById("m6").style.display="none"
+		document.getElementById("trend").style.display="block"
+		document.getElementById("popular").style.display="block"
+		document.getElementById("radio").style.display="block"
+		document.getElementById("radio1").style.display="none"
+		document.getElementById("chart").style.display="block"
+		document.getElementById("swlss").style.display="none"
+		document.getElementById("sless").style.display="none"
+		document.getElementById("m7").style.display="none"
+		document.getElementById("folder1").style.display="none"
+		document.getElementById("less").style.display="none"
+		document.getElementById("suru").style.top=0
+		
+		
+	}
+	
+	function showsongs(n)
+	{
+		document.getElementById("popular").style.display="none"
+		document.getElementById("trend").style.display="none"
+		document.getElementById("m5").style.display="block"
+		document.getElementById("radio").style.display="none"
+		document.getElementById("chart").style.display="none"
+		document.getElementById("m3").style.display="block"
+		document.getElementById("img1").src=image[n-1]
+		document.getElementById("sgrname").innerHTML=namee[n-1]
+		document.getElementById("verify").src=verified
+		document.getElementById("artist").innerHTML=Artist
+		<!-- document.getElementById("clr").style.backgroundColor=color[n-1] -->
+		
+
+		if(n==1)
+		{
+			for(i=0;i<9;i++){
+			document.getElementById("t"+(i+1)).innerHTML=songs[n-1][i]
+			document.getElementById("clr").style.backgroundColor=color[n-1]
+		    }
+		}
+		if(n==2)
+		{
+			for(i=0;i<9;i++){
+			document.getElementById("t"+(i+1)).innerHTML=songs[n-1][i]
+		    }
+		}
+		if(n==3)
+		{
+			for(i=0;i<9;i++){
+			document.getElementById("t"+(i+1)).innerHTML=songs[n-1][i]
+		    }
+		}
+		if(n==4)
+		{
+			for(i=0;i<9;i++){
+			document.getElementById("t"+(i+1)).innerHTML=songs[n-1][i]
+		    }
+		}
+	}
+	
+	function playaudio(n) 
+	{
+		let s = document.getElementById("t" + n).innerHTML + ".mp3";
+		au.pause();          // stop current playback
+		au.currentTime = 0;  // reset to start
+		au.src = s;          // set new source
+		au.play();           // play once	
+	}
+	function playvideo(n)
+	{
+		if(n==1)
+		{
+		s=document.getElementById("t"+n).innerHTML+".mp4"
+		vd.src=s
+		vd.play()
+		}
+		if(n==2)
+		{
+		s=document.getElementById("t"+n).innerHTML+".mp4"
+		vd.src=s
+		vd.play()
+	
+		}
+	}
+	function tdsong(n)
+	{	
+		document.getElementById("popular").style.display="none"
+		document.getElementById("trend").style.display="none"
+		document.getElementById("m5").style.display="block"
+		document.getElementById("radio").style.display="none"
+		document.getElementById("chart").style.display="none"
+		document.getElementById("m3").style.display="block"
+		document.getElementById("img1").src=trending[n-1]
+		
+	
+	}
+	function shwall(){
+			document.getElementById("m1").style.display="block"
+			document.getElementById("swlss").style.display="block"
+			document.getElementById("swsee").style.display="none"
+			document.getElementById("m6").style.display="none"
+		document.getElementById("trend").style.display="block"
+		document.getElementById("popular").style.display="none"
+		document.getElementById("radio").style.display="none"
+		document.getElementById("chart").style.display="none"
+			
+	}
+	function shwall2(){
+			document.getElementById("m1").style.display="none"
+			document.getElementById("swsee").style.display="block"
+			document.getElementById("swlss").style.display="none"
+			document.getElementById("m6").style.display="none"
+		document.getElementById("trend").style.display="block"
+		document.getElementById("popular").style.display="block"
+		document.getElementById("radio").style.display="block"
+		document.getElementById("chart").style.display="block"
+			
+	}
+	
+	function showall(){
+		document.getElementById("sless").style.display="block"
+		document.getElementById("ssee").style.display="none"
+		document.getElementById("m2").style.display="block"
+		document.getElementById("m1").style.display="none"
+		document.getElementById("m6").style.display="none"
+		document.getElementById("trend").style.display="none"
+		document.getElementById("popular").style.display="block"
+		document.getElementById("radio").style.display="none"
+		document.getElementById("chart").style.display="none"
+	}
+	
+	function showall2(){
+		document.getElementById("sless").style.display="none"
+		document.getElementById("ssee").style.display="block"
+		document.getElementById("m2").style.display="none"
+		document.getElementById("m1").style.display="none"
+		document.getElementById("m6").style.display="none"
+		document.getElementById("trend").style.display="block"
+		document.getElementById("popular").style.display="block"
+		document.getElementById("radio").style.display="block"
+		document.getElementById("chart").style.display="block"
+	}
+	
+	function see(){
+		document.getElementById("m4").style.display="block"
+		document.getElementById("s1").style.display="none"
+		document.getElementById("s2").style.display="block"	
+	}
+	function see1(){
+		document.getElementById("s2").style.display="none"	
+		document.getElementById("m4").style.display="none"
+		document.getElementById("s1").style.display="block"
+	}
+	
+	function sall(){
+			document.getElementById("radio1").style.display="block"
+			document.getElementById("less").style.display="block"
+			document.getElementById("all").style.display="none"
+			document.getElementById("trend").style.display="none"
+		document.getElementById("popular").style.display="none"
+		document.getElementById("radio").style.display="block"
+		document.getElementById("chart").style.display="none"
+			
+	}
+	function shless(){
+			document.getElementById("radio1").style.display="none"
+			document.getElementById("less").style.display="none"
+			document.getElementById("all").style.display="block"
+			document.getElementById("trend").style.display="block"
+		document.getElementById("popular").style.display="block"
+		document.getElementById("radio").style.display="block"
+		document.getElementById("chart").style.display="block"
+			
+	}
+	function padcast(){
+		document.getElementById("m6").style.display="block"
+		document.getElementById("trend").style.display="none"
+		document.getElementById("popular").style.display="none"
+		document.getElementById("m4").style.display="none"
+		document.getElementById("m5").style.display="none"
+		document.getElementById("radio").style.display="none"
+		document.getElementById("chart").style.display="none"
+	}
+	function back()
+	{
+		document.getElementById("m6").style.display="none"
+		document.getElementById("trend").style.display="block"
+		document.getElementById("popular").style.display="block"
+		document.getElementById("radio").style.display="block"
+		document.getElementById("chart").style.display="block"
+		
+	}
+	function createplay()
+	{
+		document.getElementById("m7").style.display="block"
+	}
+	function notnow()
+	{
+		document.getElementById("m7").style.display="none"
+	}
+	function folder()
+	{
+		document.getElementById("folder1").style.display="block"
+	}
+</script>
+
+<body  onload="setpage()" id="suru" style="">
+	<!------------------------------navbar--------------------------------------------->
+	<div class="navbar">
+		<div class="logo"><img src="logo.jpg" width=100% height=100%></div>
+		<div class="home"><img src="home.png" width=100% height=100%></div>
+
+		<div class="search"><input type="text" class="searchbox" placeholder="What do yo want to play?">	
+		</div>
+		<div class="premium">Premium Support Download</div>
+		<div class="insta"><a style="color:white" href="https://play.google.com/store/apps/details?id=com.spotify.music&hl=en_IN">Install App</a></div>
+		<div class="app"><button onclick="signup()"  class="sign"><a  href="signup.html" >Signup</a></button></div>
+		<div class="app">
+			<button onclick="login()"  class="login"><a  href="file.html" >Login</a></button>
+		</div>
+	
+	</div>
+	
+	<!---------------------------------------------create library--------------------------------------------------->
+	<div class="library">
+		<div style="display:flex">
+			<div class="icon"><img src="icon.png" width=100% height=100%></div>
+			<div class="lib">Your Library</div>
+			<div class="plus" onclick="folder()"><img src="plus.png" width=100% height=100%></div>
+			<div class="plus1" id="folder1">Create a new playlist</div>
+			
+		</div>
+		<div class="create">
+			<div class="playlist">
+				<h3>Create your first playlist</h3>
+				<p>It's easy,we'll help you</p>
+				<button onclick="createplay()" class="play">Create Playlist</button>
+			</div>
+			<div class="podcast">
+				<h3>Lets find some podcasts to follow</h3>
+				<p>We'll keep you updated on new episodes</p>
+				<button onclick="padcast()" class="play" style="cursor:pointer">Browse Padcasts</button>
+			</div>
+		</div>
+		<div class="privacy">
+		<ul>
+			<li>
+				<a href="">Legal</a>
+				<a href="">Safety& PrivacyCenter</a>
+				<a href="">Privacy Policy</a>
+			</li>
+			<li>
+				<a href="">Cookies</a>
+				<a href="">About Ads</a>
+				<a href="">Accessibility</a>
+			</li>
+			<li>
+				<a href="">Cookies</a>
+			</li>
+		<ul>
+		</div>
+		<div class="">
+				<select id="countrySelect" onchange="showCapital()">
+				<option value="">--language--</option>
+				<option value="English">English</option>
+				<option value="Hindi">Hindi</option>
+				<option value="bengali">Bengali</option>
+				<option value="Bihari">Bihari</option>
+				<option value="Orisha">Orisha</option>
+				</select>
+		</div>
+	</div>
+	<!--------------------------------------------Tranding songs----------------------------------------------------->
+<div class="trending">
+	<div id="trend" >
+		<table  style="margin-left:30px; width:100%">
+		<tr>
+			<td width=90%>
+				<font size=15px color=white><b>Trending songs</b></font>
+			</td>
+			<td width=10%>
+				<div  onclick="shwall()" id="swsee" style="cursor:pointer"><font style="font-size:20px"  color=white><b>show all</b></font></div>
+				<div onclick="shwall2()" id="swlss" style="cursor:pointer"><font style="font-size:20px" color=white><b>show less</b></font></div>
+			</td>
+		</tr>
+		</table>
+
+		<div class="singer">
+			<div class="b">
+				<div class="b1">
+					<img class="tdsongs"  onclick="tdsong(1)" src="hindisongs.jpeg">
+					<p>Hindi Songs<br> 90,s singer</p>
+					<div class="pause"><img src="pause.png"></div>
+				</div>
+			</div>
+
+			<div class="b">
+				<div class="b1">
+					<img class="tdsongs" onclick="tdsong(2)" src="punjabisongs.jpeg">
+					<p>Hindi Songs<br> 90,s singer</p>
+					<div class="pause"><img src="pause.png"></div>
+				</div>
+			</div>
+			
+			<div class="b">
+				<div class="b1">
+					<img class="tdsongs"  onclick="tdsong(3)" src="bhojpuri.jpeg">
+					<p>Hindi Songs<br> 90,s singer</p>
+					<div class="pause"><img src="pause.png"></div>
+				</div>	
+			</div>
+			
+			<div class="b">
+				<div class="b1">
+					<img class="tdsongs" onclick="tdsong(4)" src="southindian.jpeg">
+					<p>Hindi Songs<br> 90,s singer</p>
+					<div class="pause"><img src="pause.png"></div>
+				</div>
+			</div>
+			<div class="b">
+				<div class="b1">
+					<img class="tdsongs" onclick="tdsong(5)" src="southindian.jpeg">
+					<p>Hindi Songs<br> 90,s singer</p>
+					<div class="pause"><img src="pause.png"></div>
+				</div>
+			</div>	
+		</div>
+			
+		<main1 id="m1">
+			<div class="singer">
+				<div class="b"><img class="tdsongs"  onclick="tdsong(6)" src="odia.jpeg"></div>
+				<div class="b"><img class="tdsongs" onclick="tdsong(7)" src="bengoli.jpeg"></div>
+				<div class="b"><img class="tdsongs"onclick="tdsong(8)" src="90's.png"></div>
+				<div class="b"><img class="tdsongs" onclick="tdsong(9)"src="english.jpeg"></div>
+			
+				<div class="b">
+					<div class="b1">
+						<img class="tdsongs"  onclick="tdsong(10)" src="southindian.jpeg">
+						<p>Hindi Songs<br> 90,s singer</p>
+						<div class="pause"><img src="pause.png"></div>
+					</div>
+				</div>
+			</div>
+		</main1>
+		
+	</div>
+	<!-- -----------------------------------------------popular songs---------------------------------------------- -->
+	<div id="popular">
+		<table style="margin-left:30px; width:100%">
+		<tr>
+			<td width=90%><font size=40px color=white><b>Popular Singers</b></font></td>
+			<td  width=10%>
+				<div onclick="showall()" id="ssee" style="cursor:pointer"><font style="font-size:20px" color=white><b>show all</b></font></div>
+				<div onclick="showall2()" id="sless" style="cursor:pointer"><font style="font-size:20px" color=white><b>show less</b></font></div>
+			</td>
+		</tr>
+		</table>
+		
+		<div class="singer">
+			<div class="b">
+				<div class="b1">
+					<a href="#m5"><img  onclick="showsongs(1)" class="singers" src="arjit.jpeg"></a>
+					<p> Arjit singh<br> Artists</p>
+					<div class="pause"><img src="pause.png"></div>
+				</div>
+			</div>
+			
+			<div class="b">
+				<div class="b1">
+					<img onclick="showsongs(2)"  class="singers" src="kumarsanu.jpeg">
+					<p> Kumar Sanu<br> Artists</p>
+					<div class="pause"><img src="pause.png"></div>
+				</div>
+			</div>
+			
+			<div class="b">
+				<div class="b1">
+					<img onclick="showsongs(3)"  class="singers" src="udit.jpeg">
+					<p> Udit Narayan<br> Artists</p>
+					<div class="pause"><img src="pause.png"></div>
+				</div>
+			</div>
+			
+			<div class="b">
+				<div class="b1">
+					<img  onclick="showsongs(4)" class="singers" src="honey.jpeg">
+					<p> yo yo honey singh<br> Artists</p>
+					<div class="pause"><img src="pause.png"></div>
+				</div>
+			</div>
+			
+		
+			<div class="b">
+				<div class="b1">
+					<img  onclick="showsongs(5)" class="singers" src="shreya.jpg">
+					<p> Shreya Ghoshal<br> Artists</p>
+					<div class="pause"><img src="pause.png"></div>
+				</div>
+			</div>	
+		</div>
+		<main2 id="m2">
+			<div class="singer">
+				<div class="b">
+					<div class="b1">
+						<img  onclick="showsongs(6)" class="singers"  src="arrahman.jpg">
+						<p> AR Rahman<br> Artists</p>
+						<div class="pause"><img src="pause.png"></div>
+					</div>
+				</div>
+				
+				<div class="b">
+					<div class="b1">
+						<img onclick="showsongs(7)"  class="singers" src="badshah.jpg">
+						<p> Badshah<br> Artists</p>
+						<div class="pause"><img src="pause.png"></div>
+					</div>
+				</div>
+				
+				<div class="b">
+					<div class="b1">
+						<img onclick="showsongs(8)"  class="singers" src="alka.jpg">
+						<p> Alka yagnik<br> Artists</p>
+						<div class="pause"><img src="pause.png"></div>
+					</div>
+				</div>
+				
+				<div class="b">
+					<div class="b1">
+						<img  onclick="showsongs(9)" class="singers" src="drake.jpg">
+						<p> Darke<br> Artists</p>
+						<div class="pause"><img src="pause.png"></div>
+					</div>
+				</div>
+				<div class="b">
+					<div class="b1">
+						<img  onclick="showsongs(10)" class="singers" src="jubin.jpg">
+						<p>jubin notial<br> Artists</p>
+						<div class="pause"><img src="pause.png"></div>
+					</div>
+				</div>
+			</div>
+			<div class="singer">
+				<div class="b">
+					<div class="b1">
+						<img  onclick="showsongs(11)" class="singers"  src="armaan.jpg">
+						<p> Arman Malik<br> Artists</p>
+						<div class="pause"><img src="pause.png"></div>
+					</div>
+				</div>
+				
+				<div class="b">
+					<div class="b1">
+						<img onclick="showsongs(12)"  class="singers" src="vishal.jpg">
+						<p> vishal<br> Artists</p>
+						<div class="pause"><img src="pause.png"></div>
+					</div>
+				</div>
+				
+				<div class="b">
+					<div class="b1">
+						<img onclick="showsongs(13)"  class="singers" src="kk.jpg">
+						<p> kk<br> Artists</p>
+						<div class="pause"><img src="pause.png"></div>
+					</div>
+				</div>
+				
+				<div class="b">
+					<div class="b1">
+						<img  onclick="showsongs(14)" class="singers" src="diljit.jpg">
+						<p> Diljit dissanth<br> Artists</p>
+						<div class="pause"><img src="pause.png"></div>
+					</div>
+				</div>
+				
+				<div class="b">
+					<div class="b1">
+						<img  onclick="showsongs(15)" class="singers" src="sonu.jpg">
+						<p> Sonu Nigam<br> Artists</p>
+						<div class="pause"><img src="pause.png"></div>
+					</div>
+				</div>
+			</div>
+		</main2>
+	</div>
+	
+	<!------------------------------------------------papular radio----------------------------------------->
+	<div id="radio">
+		<table style="margin-left:30px; width:100%">
+			<tr>
+				<td width=90%><font size=40px color=white><b>Popular Radio</b></font></td>
+				<td  width=10%>
+					<div onclick="sall()"  id="all" style="cursor:pointer"><font style="font-size:20px" color=white><b>show all</b></font></div>
+					<div onclick="shless()" id="less" style="cursor:pointer"><font style="font-size:20px" color=white><b>show less</b></font></div>
+				</td>
+			</tr>
+		</table>
+				<div class="singer">
+					<div class="b">
+						<div class="b1">
+							<img src="arradio.jpg" onclick="arradio()" class="radio"				>
+							<p>With Sachin-Jigar,Jeet<BR>Gannguli,Atif Aslam</p>
+							<div class="pause"><img src="pause.png"></div>
+						</div>
+					</div>
+					<div class="b">
+						<div class="b1">
+							<img src="kkradio.jpg" onclick="kkradio()" class="radio"				>	
+							<p>With Pritam,Atif Aslam<br>Mustafa Zahid and more</p>
+						<div class="pause"><img src="pause.png"></div>
+						</div>
+					</div>
+					<div class="b">
+						<div class="b1">
+							<img src="shreyaradio.jpg" onclick="shreyaradio()" class="radio"				>
+							<p>With Sonu Nigam,Atif Aslam,A.R.Rahman</p>
+							<div class="pause"><img src="pause.png"></div>
+						</div>
+					</div>
+					<div class="b">
+						<div class="b1">
+							<img src="diljitradio.jpg" onclick="diljitradio()" class="radio"				>
+							<p>With Karan Aujla,Subh<br>AP Dhillon and more</p>
+							<div class="pause"><img src="pause.png"></div>
+						</div>
+					</div>
+					<div class="b">
+						<div class="b1">
+							<img src="rahmanradio.jpg" onclick="rahmanradio()" class="radio"				>
+							<p>With G.V.Prakash,<br>Hariharan,Sid Sriram</p>
+							<div class="pause"><img src="pause.png"></div>
+						</div>
+					</div>
+				</div>
+			    <div id="radio1">
+					<div class="singer">
+						<div class="b">
+							<div class="b1">
+								<img src="sidhuradio.jpg"  onclick="sidhuradio()" class="radio">
+								<p>With Subh, AP Dhillon, Prem Dhillon and more</p>
+								<div class="pause"><img src="pause.png" alt="Pause"></div>
+							</div>
+						</div>
+						<div class="b">
+							<div class="b1">
+								<img src="kishore.jpg" onclick="kishoreradio()" class="radio">
+								<p>With Kishore Kumar, Prem Kishore and more</p>
+								<div class="pause"><img src="pause.png" alt="Pause"></div>
+							</div>
+						</div>
+						<div class="b">
+							<div class="b1">
+								<img src="sanu.jpg"  onclick="sanuradio()" class="radio">
+								<p>With Kumar Sanu, Prem Kumar Sanu and more</p>
+								<div class="pause"><img src="pause.png" alt="Pause"></div>
+							</div>
+						</div>
+						<div class="b">
+							<div class="b1">
+								<img src="yo yo.jpg"  onclick="yoyoradio()" class="radio">
+								<p>With Yo Yo Honey Singh and more</p>
+								<div class="pause"><img src="pause.png" alt="Pause"></div>
+							</div>
+						</div>
+						<div class="b">
+							<div class="b1">
+								<img src="lata.jpg"  onclick="lataradio()" class="radio">
+								<p>With Lata Mangeshkar and more</p>
+								<div class="pause"><img src="pause.png" alt="Pause"></div>
+							</div>
+						</div>
+						</div>
+						<div class="singer">
+						<div class="b">
+							<div class="b1">
+								<img src="sp.jpg" onclick="spradio()" class="radio">
+								<p>With S.P. Balasubrahmanyam and more</p>
+								<div class="pause"><img src="pause.png" alt="Pause"></div>
+							</div>
+						</div>
+						<div class="b">
+							<div class="b1">
+								<img src="karan.jpg"  onclick="karanradio()" class="radio">
+								<p>With Karan Aujla and more</p>
+								<div class="pause"><img src="pause.png" alt="Pause"></div>
+							</div>
+						</div>
+						<div class="b">
+							<div class="b1">
+								<img src="subh.jpg"  onclick="subhradio()" class="radio">
+								<p>With Subh and more</p>
+								<div class="pause"><img src="pause.png" alt="Pause"></div>
+							</div>
+						</div>
+						<div class="b">
+							<div class="b1">
+								<img src="rafi.jpg"  onclick="rafiradio()" class="radio">
+								<p>With Mohammed Rafi and more</p>
+								<div class="pause"><img src="pause.png" alt="Pause"></div>
+							</div>
+						</div>
+						<div class="b">
+							<div class="b1">
+								<img src="gv.jpg"  onclick="gvpradio()" class="radio">
+								<p>With G.V. Prakash and more</p>
+								<div class="pause"><img src="pause.png" alt="Pause"></div>
+							</div>
+						</div>
+						<div class="b">
+							<div class="b1">
+								<img src="masoom.jpg"  onclick="masoomradio()" class="radio">
+								<p>With Masoom and more</p>
+								<div class="pause"><img src="pause.png" alt="Pause"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+	</div>
+	<!----------------------------------------------------Featured charts-------------------------------------------------->	
+		<div id="chart">
+				<div class="pr"><h4>Featured Charts</h4></div>
+				<div class="singer">
+					<div class="b">
+						<div class="b1">
+							<img src="global.png" onclick="topglobal()" style="height:180px;width:180px;border-radius:10px">
+							<p>Yours weeking update of<br> the most played track....</p>
+							<div class="pause"><img src="pause.png"></div>
+						</div>
+					</div>
+					<div class="b">
+						<div class="b1">
+							<img src="india.png" onclick="topindia()" style="height:180px;width:180px;border-radius:10px">	
+							<p>Yours weeking update of<br> the most played track....</p>
+						<div class="pause"><img src="pause.png"></div>
+						</div>
+					</div>
+					<div class="b">
+						<div class="b1">
+							<img src="top50.jpeg" onclick="top50()"  style="height:180px;width:180px;border-radius:10px">
+							<p>Yours weeking update of<br> the most played track....</p>
+							<div class="pause"><img src="pause.png"></div>
+						</div>
+					</div>
+					<div class="b">
+						<div class="b1">
+							<img src="india1.jpeg" onclick="top50india()" style="height:180px;width:180px;border-radius:10px">
+							<p>Yours weeking update of<br> the most played track....</p>
+							<div class="pause"><img src="pause.png"></div>
+						</div>
+					</div>
+					<div class="b">
+						<div class="b1">
+							<img src="viral50.jpeg" onclick="viralindia()" style="height:180px;width:180px;border-radius:10px">
+							<p>Yours weeking update of<br> the most played track....</p>
+							<div class="pause"><img src="pause.png"></div>
+						</div>
+					</div>
+					<div class="b">
+						<div class="b1">
+							<img src="top50.jpeg" onclick="viralglobal()" style="height:180px;width:180px;border-radius:10px">
+							<p>Yours weeking update of<br> the most played track....</p>
+							<div class="pause"><img src="pause.png"></div>
+						</div>
+					</div>
+				</div>
+		</div>
+	<!-- -----------------------------------------------------songs lists---------------------------------------------- -->
+	<div id="m5">
+					<div class="ajt">
+						<div class="arj" id="clr">	
+							<div class="">
+								<img class="singers1" id="img1" src="">
+							</div>
+							<div class="artist">
+								<div class="verified"><img  id="verify" src="" width=100%></div>
+								<p class="artist1" id="artist"></p>
+							</div><br>
+	
+							<div class="arjit">
+								<div class="arjit1" id="sgrname"></div>
+								<p>50,507,862 monthly listeners</p>
+							</div>
+						</div>
+						<div class="song-list">
+							<div class="song-list1">
+								<div class="pause1">
+									<img src="pause.png">
+								</div>
+								<div class="button1">
+									<button onclick="">Follow</button>
+								</div>
+								<div class="dot"><img src="dot.png"></div>
+							</div>
+							<div class="pop">Popular</div>
+							<div class="arjit2">
+								<main3  id="m3">
+								
+									<table  class="table1" align=center> 
+									
+									<tr>
+										<td width=5%; height=8px;>01</td>
+										<td   id="t1" width=40%; height=8px; ></td>
+										<td width=20% >30963250236</td>
+										<td width=20%; height=8px;><button onclick="playaudio(1)"><b>Audio</b></button> <button onclick="playvideo(1)"><b>Video</b></button></td>
+									
+									</tr>
+									<tr>
+										<td width=5%; height=10px;>02</td>
+										<td   id="t2" width=40%; height=10px;> </td>
+										<td width=20%>30963250236</td>
+										<td width=20%; height=10px;><button onclick="playaudio(2)"><b>Audio</b></button> <button onclick="playvideo(2)"><b>Video</b></button></td>
+									</tr>
+										<tr>
+										<td width=5%; height=10px;>03</td>
+										<td   id="t3" width=40%; height=10px;> </td>
+										<td width=20%>30963250236</td>
+										<td width=20%; height=10px;><button onclick="playaudio(3)"><b>Audio</b></button> <button onclick="playvideo(3)"><b>Video</b></button></td>
+									</tr>
+									</tr>
+										<tr>
+										<td width=5%; height=10px;>04</td>
+										<td   id="t4" width=40%; height=10px;> </td>
+										<td width=20%>30963250236</td>
+										<td width=20%; height=10px;><button onclick="playaudio(4)"><b>Audio</b></button> <button onclick="playvideo(3)"><b>Video</b></button></td>
+									</tr>
+									</tr>
+										<tr>
+										<td width=5%; height=10px;>05</td>
+										<td   id="t5" width=40%; height=10px;> </td>
+										<td width=20%>30963250236</td>
+										<td width=20%; height=10px;><button onclick="playaudio(5)"><b>Audio</b></button> <button onclick="playvideo(3)"><b>Video</b></button></td>
+									</tr>
+									</tr>
+										<tr>
+										<td width=5%; height=10>06</td>
+										<td   id="t6" width=40%; height=10px;> </td>
+										<td width=20%>30963250236</td>
+										<td width=20%; height=10px;><button onclick="playaudio(6)"><b>Audio</b></button> <button onclick="playvideo(3)"><b>Video</b></button></td>
+									</tr>
+									</tr>
+										<tr>
+										<td width=5%; height=10px;>07</td>
+										<td   id="t7" width=40%; height=10px;> </td>
+										<td width=20%>30963250236</td>
+										<td width=20%; height=10px;><button onclick="playaudio(7)"><b>Audio</b></button> <button onclick="playvideo(3)"><b>Video</b></button></td>
+									</tr>
+									</tr>
+										<tr>
+										<td width=5%; height=10px;>08</td>
+										<td   id="t8" width=40%; height=10px;> </td>
+										<td width=20%>30963250236</td>
+										<td width=20%; height=10px;><button onclick="playaudio(8)"><b>Audio</b></button> <button onclick="playvideo(3)"><b>Video</b></button></td>
+									</tr>
+									
+								</table> 
+									<video controls id="vd"></video>
+								</main3>
+			
+		
+								
+							<main4 id="m4">
+							
+								</main4>
+							</div>
+		
+						<div onclick="see()" id="s1" class="see">see more</div>	
+		
+		
+		
+						<div onclick="see1()" id="s2" class="see">see less</div>	
+		
+					</div>
+					</div>
+	</div>	
+
+	<!-- ------------------------------------------------------podcasts-------------------------------------------------------------- -->
+			<main6 id="m6">
+				<div class="back" onclick="back()"><img src="back.jpg"></div>
+				<div class="podbg">
+					<p>Podcasts</p>
+				</div>
+				<div class="ep">
+					<h4>Best episodes of the week</h4>
+					<div class="singer">
+						<div class="b">
+							<div class="b1">
+								<img src="desicrime.jpg" onclick="podcast()" style="height:180px;width:180px;border-radius:10px">
+								<p>Cries of a 100<BR>Mother:Javed lqbal.....</p>
+								<div class="pause"><img src="pause.png"></div>
+							</div>
+						</div>
+						<div class="b">
+							<div class="b1">
+								<img src="ep275.jpg"  onclick="ep275()" style="height:180px;width:180px;border-radius:10px">	
+								<p>The Internet Said So|Ep<br>275 | Music.....</p>
+								<div class="pause"><img src="pause.png"></div>
+							</div>
+						</div>
+						<div class="b">
+							<div class="b1">
+								<img src="konjam.jpg" onclick="konjam()" style="height:180px;width:180px;border-radius:10px">
+								<p>Ep.233-People<br>Watching Soul Noticin......</p>
+								<div class="pause"><img src="pause.png"></div>
+							</div>
+						</div>
+						<div class="b">
+							<div class="b1">
+								<img src="mentor.jpg" onclick="mindset()" style="height:180px;width:180px;border-radius:10px">
+								<p>The Mindset Mentor</p>
+								<div class="pause"><img src="pause.png"></div>
+							</div>
+						</div>
+						<div class="b">
+							<div class="b1">
+								<img src="true.jpg" onclick="truecrime()" style="height:180px;width:180px;border-radius:10px">
+								<p>True Crime<br>Real Story</p>
+								<div class="pause"><img src="pause.png"></div>
+							</div>
+						</div>
+						<div class="b">
+							<div class="b1">
+								<img src="rogan.jpg" onclick="rogan()" style="height:180px;width:180px;border-radius:10px">
+								<p>The Joe Rogan<br>Experience</p>
+								<div class="pause"><img src="pause.png"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bh">
+					<h4>Bengali Horror & Thriller</h4>
+					<div class="singer">
+						<div class="b">
+							<div class="b1">
+								<img src="pret.jpg" onclick="pretkotha()" style="height:180px;width:180px;border-radius:10px">
+								<p>Hindi Album<BR>rohit mahato</p>
+								<div class="pause"><img src="pause.png"></div>
+							</div>
+						</div>
+						<div class="b">
+							<div class="b1">
+								<img src="midnight.jpg" onclick="midnight()" style="height:180px;width:180px;border-radius:10px">	
+								<p>Jugraafiya <br>Udit Narayan</p>
+								<div class="pause"><img src="pause.png"></div>
+							</div>
+						</div>
+						<div class="b">
+							<div class="b1">
+								<img src="dra.jpg" onclick="drakkhani()" style="height:180px;width:180px;border-radius:10px">
+								<p>Shree Hanuman Chalisa<br>Hariharan</p>
+								<div class="pause"><img src="pause.png"></div>
+							</div>
+						</div>
+						<div class="b">
+							<div class="b1">
+								<img src="eso.jpg"  onclick="eso()"style="height:180px;width:180px;border-radius:10px">
+								<p>Jhol<br>Rifat Karim</p>
+								<div class="pause"><img src="pause.png"></div>
+							</div>
+						</div>
+						<div class="b">
+							<div class="b1">
+								<img src="satya.jpg" onclick="satya()" style="height:180px;width:180px;border-radius:10px">
+								<p>Gabriela<br>Katseye</p>
+								<div class="pause"><img src="pause.png"></div>
+							</div>
+						</div>
+						<div class="b">
+							<div class="b1">
+								<img src="thriller.jpg" onclick="thriller()" style="height:180px;width:180px;border-radius:10px">
+								<p>Karan Aujla<br>Album</p>
+								<div class="pause"><img src="pause.png"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="cat">
+					<h4>Categories</h4>
+					<div class="singer1">
+						<div class="">
+							<div class="cat1">
+								<img src="cast.jpg">
+							</div>
+						</div>
+						<div class="">
+							<div class="cat1">
+								<img src="new.jpg">
+							</div>
+						</div>
+						<div class="">
+							<div class="cat1">
+								<img src="video.jpg">
+							</div>
+						</div>
+						<div class="">
+							<div class="cat1">
+								<img src="self.jpg">
+							</div>
+						</div>
+					</div>
+					<div class="singer1">
+					<div class="">
+							<div class="cat1">
+								<img src="business.jpg">
+							</div>
+						</div>
+						<div class="">
+							<div class="cat1">
+								<img src="education.jpg">
+							</div>
+						</div>
+						<div class="">
+							<div class="cat1">
+								<img src="books.jpg">
+							</div>
+						</div>
+						<div class="">
+							<div class="cat1">
+								<img src="story.jpg">
+							</div>
+						</div>
+						
+					</div>
+					
+					<div class="singer1">
+					<div class="">
+							<div class="cat1">
+								<img src="tamil.jpg">
+							</div>
+						</div>
+						<div class="">
+							<div class="cat1">
+								<img src="devotion.jpg">
+							</div>
+						</div>
+						<div class="">
+							<div class="cat1">
+								<img src="horror.jpg">
+							</div>
+						</div>
+						<div class="">
+							<div class="cat1">
+								<img src="comedy.jpg">
+							</div>
+						</div>
+						
+					</div>
+					
+					<div class="singer1">
+					<div class="">
+							<div class="cat1">
+								<img src="history.jpg">
+							</div>
+						</div>
+						<div class="">
+							<div class="cat1">
+								<img src="sports.jpg">
+							</div>
+						</div>
+						<div class="">
+							<div class="cat1">
+								<img src="news.jpg">
+							</div>
+						</div>
+						<div class="">
+							<div class="cat1">
+								<img src="arts.jpg">
+							</div>
+						</div>
+						
+						</div>
+						
+						<div class="singer1">
+						<div class="">
+							<div class="cat1">
+								<img src="love.jpg">
+							</div>
+						</div>
+						<div class="">
+							<div class="cat1">
+								<img src="bengali.jpg">
+							</div>
+						</div>
+					</div>
+				</div>
+			</main6>	
+		<br>
+
+			<!-- -------------------------------------footer section---------------------------------------------------- -->
+		<hr>
+		<div class="footer-section">
+            <div class="footer">
+                <div class="footer-link">
+                    <div class="footer-column">
+                        <div>Company</div>
+                            <ul class="col-link">
+                                <li><a href="">About</a></li>
+                                <li><a href="">Jobs</a></li>
+                                <li><a href="">For the Recored</a></li>
+								<li><a href="http://www.google.co.in/" target="_blank">Google</a></li>
+                            </ul>
+                    </div>
+                    <div class="footer-column">
+                        <div>Communities</div>
+                            <ul class="col-link">
+                                <li><a href="">For Artists</a></li>
+                                <li><a href="">Developers</a></li>
+                                <li><a href="">Advertising</a></li>
+                                <li><a href="">Investors</a></li>
+                                <li><a href="">Vendors</a></li>
+                            </ul>
+                    </div>
+                    <div class="footer-column">
+                        <div>Useful links</div>
+                            <ul class="col-link">
+                                <li><a href="">Support</a></li>
+                                <li><a href="">Free Mobile App</a></li>
+                            </ul>
+                    </div>
+                    <div class="footer-column">
+                        <div>Spotify Plans</div>
+                            <ul class="col-link">
+                                <li><a href="">Premium Individual</a></li>
+                                <li><a href="">Premium Duo</a></li>
+                                <li><a href="">Premium Family</a></li>
+                                <li><a href="">Premium Student</a></li>
+                                <li><a href="">Spotify Free</a></li>
+                            </ul>
+					</div>
+				</div>
+			</div>
+            <div class="soical-link">
+                <img src="linkedin.png" alt="">
+                <img src="facebook.png" alt="">
+                <img src="twitter.png" alt="">
+				<img src="insta.png" alt="">
+            </div>
+        </div>
+		<hr>
+
+		<div class="copy-right"><p>@ 2025 Spotify AB</p></div>
+
+
+
+		
+		<!------------------------------------------------------create playlist pop-up------------------------------------------------------------>	
+		<main7 id="m7">
+			<div class="create-play">
+				<div class="">
+					<h4>Create a Playlist</h4>
+					<p>Log in to create and share playlists</p>
+					<label  onclick="notnow()" class="now">Not Now</label>
+					<div class=""><button onclick="" class="lgin"><a href="file.html" target="contentFrame">Log in</a></button></div>
+					<div class="play-arrow"></div>
+				</div>
+			</div>
+		</main7>
+	</div>
+	
+	<!-- ------------------------------------------------preview section--------------------------------------------------------- -->
+	<div class="preview">
+        <div class="text">
+            <h4>Preview of Spotify</h4>
+            <p>Sign up to get unlimited songs and podcasts with occasional ads.No credit card needed</p>
+        </div>
+        <div class="button">
+            <button>Sign Up Free</button>
+        </div>
+    </div>
+</body>
+</html>  
+
+<!-- imgarr=["arijit.jpeg",",",] -->
+<!-- function show(n) -->
+<!-- { -->
+   <!-- document.getElementById("img1").src=imgarr[n] -->
+
+
+
+<!-- } -->
